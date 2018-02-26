@@ -139,7 +139,7 @@ const bst = new BST();
 bst.add(4,2,6,1,3,5,7);
 console.log(bst);
 
-console.log(bst.isPresent(4))  //false
+console.log(bst.isPresent(4))  //true
 bst.remove(4);
 console.log(bst.isPresent(4));  //false
 
