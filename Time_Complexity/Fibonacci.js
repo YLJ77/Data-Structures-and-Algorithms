@@ -54,3 +54,24 @@ n - k = 0 => k = n
 T(n = 2^n * T(0) + (2^n - 1) * C
     = (1 + C) * 2^n - C
  * */
+
+// Recursion with memoization
+let F = {};
+function FibM(n) {
+    if (n <= 1) {
+        return n;
+    }
+
+    if (F[n] !== undefined) {
+        return F[n];
+    }
+
+    return F[n] = FibM(n - 1) + FibM(n - 2);
+
+}
+
+module.exports = {
+    Fib,
+    FibI,
+    FibM
+}
