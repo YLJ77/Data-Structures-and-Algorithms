@@ -3,8 +3,7 @@
  T(n) ∈ 2^n  // Upper bound
 
  O(2^n) →　Fib (recurision)  // 指数时间函数
- O(n) →　Fib (Iterative)  // 线性时间函数
- * */
+ */
 function Fib(n) {
     if (n <= 1) {  // 1
         return n;
@@ -12,6 +11,19 @@ function Fib(n) {
         return Fib(n-1) + Fib(n-2);
         //          1   1      1
     }
+}
+
+//O(n) →　Fib (Iterative)  // 线性时间函数
+function FibI(n) {
+    if (n <= 1) {
+        return n;
+    }
+    let F1, F2, F;
+    for (let i=0; i<=n; i++) {
+        F = F1 + F2;
+        [F1, F2] = [F2, F];
+    }
+    return F;
 }
 
 /*
