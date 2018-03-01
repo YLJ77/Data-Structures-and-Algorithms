@@ -8,12 +8,12 @@ function insertionSort(arr) {                  // cost   times
         while (i > 0 && arr[i] > key) {        // c5     ∑tj 
                                                //       j=2
 
-                                               // c6     n 
-            arr[i + 1] = arr[i];               //        ∑(tj - 1)
+                                               //        n 
+            arr[i + 1] = arr[i];               // c6     ∑(tj - 1)
                                                //       j=2
                                                
-                                               // c7     n
-            i-=1;                              //        ∑(tj - 1)
+                                               //        n
+            i-=1;                              // c7     ∑(tj - 1)
                                                //       j=2
         }
         arr[i + 1] = key;                      // c8     n - 1
@@ -50,6 +50,6 @@ j=2
 T(n) = c1n + c2(n - 1) + c4(n - 1) + c5(n(n + 1) / 2 - 1) + c6(n(n - 1) / 2) + c7(n(n - 1) / 2) + c8(n - 1)
      = (c5/2 + c6/2 + c7/2)n^2 + (c1 + c2 + c4 + c5/2 - c6/2 - c7/2 + c8)n - (c2 + c4 + c5 + c8)
      = an^2 + bn + c   // quadratic function
- * /
+*/
 
 module.exports = insertionSort;
