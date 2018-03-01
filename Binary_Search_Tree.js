@@ -121,7 +121,6 @@ class BST {
                     tempNode = tempNode.left;
                 }
                 node.data = tempNode.data;
-                debugger;
                 node.right = removeNode(node.right, tempNode.data);
                 return node;
            } else if (data < node.data) {
