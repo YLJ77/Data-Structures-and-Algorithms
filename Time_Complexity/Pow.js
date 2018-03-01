@@ -13,6 +13,14 @@ function Pow(x, n) {
 }
 
 /*
+ 
+T(n) = T(n - 1) + C
+     = T(n - 2) + 2C
+     = T(n - k) + kC
+
+n -k = 0 => k = n
+T(n) = T(n) + nc
+     = nC + 1 => O(n)
 
 Stack:
 
@@ -45,6 +53,23 @@ function Pow_(x, n) {
 }
 
 /*
+ 
+T(n) = T(n/2) + C1        if n is even
+     = T(n - 1) + C2      if n is odd
+
+T(0) = 1, T(1) = 1 + C2
+
+T(n) = T((n - 1)/2) + C1 + C2
+     = T(n/2) + C      C > C1
+     = T(n/4) + 2C
+     = T(n/8) + 3C
+     = T(n/2^k) + 3k
+
+n/2^k = 1 => 2^k = n => k = log2n
+T(n) = T(1) + Clogn
+     = 1 + C2 + Clogn => O(logn)
+
+
    Stack:
 
      x^8
