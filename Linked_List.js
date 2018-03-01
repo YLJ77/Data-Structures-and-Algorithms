@@ -1,4 +1,11 @@
 /* Linked List */
+/*
+ Access to elements
+ Array: O(1)
+ Linked List: O(n)
+ Insertion: O(n)
+ 
+ */
 
 class Node {
     constructor(element) {
