@@ -23,28 +23,28 @@ class BST {
         const node = this.root;
         if (node === null) {
             this.root = new Node(data);
-            return;
+            ;
         } else {
             const searchTree = node => {
                 if (data < node.data) {
                     if (node.left === null) {
                         node.left = new Node(data);
-                        return;
+                        ;
                     } else if (node.left !== null) {
-                        return searchTree(node.left);
+                         searchTree(node.left);
                     }
                 } else if (data > node.data) {
                     if (node.right === null) {
                         node.right = new Node(data);
-                        return;
+                        ;
                     } else if (node.right !== null) {
-                        return searchTree(node.right);
+                         searchTree(node.right);
                     }
                 } else {
-                    return null;
+                     null;
                 }
             }
-            return searchTree(node);
+             searchTree(node);
         }
     }
 
@@ -179,6 +179,7 @@ class BST {
         }
     }
 
+    //从上到下,由左到右
     preOrder() {
         if (this.root === null) {
             return null;
@@ -194,6 +195,7 @@ class BST {
         }
     }
 
+    //从下到上,由左到右
     postOrder() {
         if (this.root === null) {
             return null;
@@ -239,9 +241,10 @@ bst.remove(4);
 console.log(bst.isPresent(4));  //false
 
 console.log(bst.findMin()); //1
-console.log(bst.findMax()); //7
+console.log(bst.findMax()); //8
 
 console.log(bst.findMaxHeight()); // 2
+console.log(bst.findMinHeight()); // 1
 
 console.log(bst.inOrder()) // [ 1, 2, 3, 5, 6, 7, 8 ]
 console.log(bst.preOrder())  // [ 5, 2, 1, 3, 6, 7, 8 ]

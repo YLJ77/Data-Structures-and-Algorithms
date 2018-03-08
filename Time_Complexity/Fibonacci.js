@@ -13,18 +13,6 @@ function Fib(n) {
     }
 }
 
-//O(n) →　Fib (Iterative)  // 线性时间函数
-function FibI(n) {
-    if (n <= 1) {
-        return n;
-    }
-    let F1, F2, F;
-    for (let i=0; i<=n; i++) {
-        F = F1 + F2;
-        [F1, F2] = [F2, F];
-    }
-    return F;
-}
 
 /*
  Lower bound:
@@ -66,8 +54,8 @@ L1                  F(4)       F(3)
 L2                F(3) F(2)   F(2)  F(1)
                    /  \        /  \
 L3               F(2) F(1)   F(1)  F(0)
-                  /  \
-L4              F(1) F(0)
+                  /   
+L4              F(1)  (0)
 
 
 
@@ -93,6 +81,24 @@ L4              F(1) F(0)
 |-----------|
 |    F(5)   |
  * */
+
+
+
+
+//O(n) →　Fib (Iterative)  // 线性时间函数
+function FibI(n) {
+    if (n <= 1) {
+        return n;
+    }
+    let F1 = 0, F2 = 1, F;
+    for (let i=0; i<=n; i++) {
+        F = F1 + F2;
+        [F1, F2] = [F2, F];
+    }
+    return F;
+}
+
+
 
 // Recursion with memoization
 let F = {};
