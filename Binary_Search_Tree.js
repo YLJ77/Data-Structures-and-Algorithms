@@ -23,28 +23,23 @@ class BST {
         const node = this.root;
         if (node === null) {
             this.root = new Node(data);
-            ;
         } else {
             const searchTree = node => {
                 if (data < node.data) {
                     if (node.left === null) {
                         node.left = new Node(data);
-                        ;
                     } else if (node.left !== null) {
                          searchTree(node.left);
                     }
                 } else if (data > node.data) {
                     if (node.right === null) {
                         node.right = new Node(data);
-                        ;
                     } else if (node.right !== null) {
                          searchTree(node.right);
                     }
-                } else {
-                     null;
                 }
             }
-             searchTree(node);
+            searchTree(node);
         }
     }
 
