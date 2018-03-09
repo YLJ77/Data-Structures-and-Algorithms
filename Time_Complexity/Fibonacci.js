@@ -91,7 +91,7 @@ function FibI(n) {
         return n;
     }
     let F1 = 0, F2 = 1, F;
-    for (let i=0; i<=n; i++) {
+    for (let i=2; i<=n; i++) {
         F = F1 + F2;
         [F1, F2] = [F2, F];
     }
